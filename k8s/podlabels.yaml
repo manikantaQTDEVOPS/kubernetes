@@ -1,0 +1,50 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-labelspod-1
+  labels:
+    app: nginx
+    env: dev
+    release: v1.1
+spec:
+  containers:
+    - name: my-nginx
+      image: nginx:1.14.2
+      ports:
+        - containerPort: 80 
+          protocol: TCP
+
+---
+apiVersion: v1
+kind: Pod
+metadata: 
+  name: my-labelspod-2
+  labels:
+    app: nginx
+    env: qa
+    release: v1.1
+spec: 
+  containers:
+    - name: my-nginx
+      image: nginx:1.14.2
+      ports:
+        - containerPort: 80
+          protocol: TCP
+
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-labelspod-3
+  labels:
+    app: nginx
+    env: uat
+    release: v1.1
+spec:
+  containers:
+    - name: my-nginx
+      image: nginx:1.14.2
+      ports:
+        - containerPort: 80
+          protocol: TCP         
