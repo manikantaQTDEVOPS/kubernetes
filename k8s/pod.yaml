@@ -8,6 +8,5 @@ spec:
     - name: my-nginx
       image: nginx:1.25
       ports:
-        - containerport: 80
-          name: mani
+        - containerPort: 80
           protocol: TCP
