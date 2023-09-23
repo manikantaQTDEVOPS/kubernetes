@@ -1,0 +1,22 @@
+---
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: my-replicaset
+  labels:
+    app: myname
+    purpose: learning
+spec:
+  minReadySeconds: 5
+  replicas: 3
+  selector:
+    matchLabels:
+      app: mani
+  template:
+    metadata:
+      labels:
+        app: mani
+    spec:
+      containers:
+        - name: my-nginx
+          image: nginx:1.25
