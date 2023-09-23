@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: my-rpc
+  labels:
+    app: mani
+spec:
+  minReadySeconds: 2
+  replicas: 3
+  selector:
+    app: mani
+  template:
+    metadata:
+      labels:
+        app: mani
+      name: my-rpc
+    spec:
+      containers:
+        - name: my-nginx        
+          image: nginx:1.25
+          ports:
+            - containerPort: 80
+              protocol: TCP
